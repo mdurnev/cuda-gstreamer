@@ -1,0 +1,31 @@
+GSTREAMER PLUGIN BUNDLE FOR NVIDIA GPUS
+---------------------------------------
+
+This is a bundle of gstreamer plugins which use NVIDIA CUDA technology to run on NVIDIA GPUs.
+To build those plugins you have to install gstreamer 0.10 and NVIDIA CUDA SDK 5.5.22 for Linux.
+To use the plugins you need an NVIDIA GPU with compute capability 2.0 or higher.
+
+
+
+BUILD INSTRUCTIONS
+------------------
+
+1. 'git clone' or copy the sources into your Nsight Eclipse Edition workspace
+
+2. Execute configure.py
+
+3. From Nsight IDE import all projects into your workspace (File -> Import... -> General -> Exsting Projects into Workspace)
+
+4. Build plugins you need
+
+5. Copy libgstcuda*.so files to /usr/lib/gstreamer-0.10/
+
+
+
+GSTREAMER PIPELINE EXAMPLES
+---------------------------
+
+There are two special plugins: cudahost2gpu opens a CUDA pipeline and cudagpu2host closes the CUDA pipeline. All other CUDA plugins 
+must be in between.
+
+gst-launch v4l2src ! ffmpegcolorspace ! 'video/x-raw-rgb,width=640,height=480' ! cudahost2gpu ! cudalens ! cudagpu2host ! ximagesink
