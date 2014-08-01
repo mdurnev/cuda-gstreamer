@@ -1,0 +1,2 @@
+#!/bin/sh
+cp Release/libgstcudacurves.so /usr/lib/gstreamer-0.10/

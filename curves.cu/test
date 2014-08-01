@@ -1,0 +1,2 @@
+#!/bin/bash
+gst-launch --gst-debug="cudacurves:5" videotestsrc ! 'video/x-raw-rgb,width=640,height=480' ! cudahost2gpu ! cudacurves red="curve.txt" green="curve.txt" blue="curve.txt" ! cudagpu2host ! ximagesink
