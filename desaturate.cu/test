@@ -1,0 +1,2 @@
+#!/bin/bash
+gst-launch --gst-debug="cudadesaturate:5" videotestsrc ! 'video/x-raw-rgb,width=640,height=480' ! cudahost2gpu ! cudadesaturate saturation=5 ! cudagpu2host ! ximagesink
