@@ -1,0 +1,2 @@
+#!/bin/bash
+gst-launch --gst-debug="cudatemporal:5" videotestsrc num-buffers=50 ! 'video/x-raw-rgb,width=640,height=480' ! cudahost2gpu ! cudatemporal window=4 ! cudagpu2host ! ximagesink

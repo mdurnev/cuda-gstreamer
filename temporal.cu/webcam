@@ -1,0 +1,3 @@
+#!/bin/bash
+gst-launch v4l2src ! ffmpegcolorspace ! 'video/x-raw-rgb,width=640,height=480' ! cudahost2gpu ! cudatemporal window=3 ! cudagpu2host ! ximagesink
+

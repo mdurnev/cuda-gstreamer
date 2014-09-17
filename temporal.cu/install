@@ -1,0 +1,2 @@
+#!/bin/sh
+cp Release/libgstcudatemporal.so /usr/lib/gstreamer-0.10/
