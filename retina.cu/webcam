@@ -1,0 +1,8 @@
+#!/bin/bash
+gst-launch v4l2src ! ffmpegcolorspace ! 'video/x-raw-rgb,width=640,height=480' ! cudahost2gpu ! cudaretina ! cudagpu2host ! ximagesink
+
+#gst-launch v4l2src ! ffmpegcolorspace ! 'video/x-raw-rgb,width=640,height=480' ! videoscale ! 'video/x-raw-rgb,width=160,height=120' \
+#           ! cudahost2gpu ! cudaretina ! cudagpu2host \
+#           ! videoscale ! 'video/x-raw-rgb,width=640,height=480' \
+#           ! ximagesink
+
