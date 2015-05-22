@@ -1,0 +1,2 @@
+#!/bin/sh
+cp Release/libgstcudagradient.so /usr/lib/gstreamer-0.10/

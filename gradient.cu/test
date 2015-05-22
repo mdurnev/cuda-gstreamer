@@ -1,0 +1,3 @@
+#!/bin/bash
+#gst-launch --gst-debug="cudadesaturate:5" videotestsrc ! 'video/x-raw-rgb,width=640,height=480' ! cudahost2gpu ! cudagradient ! cudagpu2host ! ximagesink
+gst-launch filesrc location="${HOME}/Видео/свои/MVI_0732.MOV" ! decodebin2 ! ffmpegcolorspace ! cudahost2gpu ! cudagradient ! cudagpu2host ! ximagesink
